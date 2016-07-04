@@ -10,7 +10,7 @@ var server = http.createServer(function(req, res){
   if (req.method == 'GET') {
     var fileUrl;
         if (req.url == '/') fileUrl = '/index.html';
-    else fileUrl = req.url;
+        else fileUrl = req.url;
         var filePath = path.resolve('./public'+fileUrl);
         var fileExt = path.extname(filePath);
         if (fileExt == '.html') {
@@ -36,5 +36,5 @@ var server = http.createServer(function(req, res){
 });
 
 server.listen(port, hostname, function(){
-  console.log('Server running at http://${hostname}:${port}/');
+  console.log('Server running at http://'+hostname+':'+port+'/');
 });
